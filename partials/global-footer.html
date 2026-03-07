@@ -1,15 +1,14 @@
 <footer class="site-footer">
   <div class="inner">
     <div>
-      <p class="small">© <span id="year"></span> Puravigal. Building scalable SaaS products.</p>
+      <p class="small">© <span data-current-year></span> Puravigal. Building scalable SaaS products.</p>
       <p class="small">Tamil Nadu, India · sales@puravigal.com</p>
     </div>
     <nav class="nav" aria-label="Footer">
       <a href="/products.html">Products</a>
       <a href="/careers.html">Careers</a>
       <a href="/contact-us.html">Contact</a>
-      <a href="mailto:sales@puravigal.com">Email</a>
+      <button class="btn-link" type="button" data-open-consent>Cookie Preferences</button>
     </nav>
   </div>
 </footer>
-<script>document.getElementById('year') && (document.getElementById('year').textContent = new Date().getFullYear());</script>
