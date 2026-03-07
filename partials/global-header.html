@@ -1,12 +1,18 @@
-<header class="site-header">
+<header class="site-header" data-site-header>
   <div class="inner">
     <a class="brand" href="/index.html" aria-label="Puravigal home">
       <img src="/images/puravigal-logo.svg" alt="Puravigal" loading="eager" decoding="async">
     </a>
-    <nav class="nav" aria-label="Primary">
+
+    <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="global-nav" aria-label="Toggle navigation" data-menu-toggle>
+      <span></span><span></span><span></span>
+    </button>
+
+    <nav id="global-nav" class="nav nav-primary" aria-label="Primary" data-primary-nav>
       <a href="/index.html">Home</a>
       <a href="/products.html">Products</a>
       <a href="/about-us.html">About</a>
+      <a href="/careers.html">Careers</a>
       <a href="/contact-us.html">Contact</a>
       <a href="/privacy-policy.html">Privacy</a>
       <a href="/terms-and-conditions.html">Terms</a>

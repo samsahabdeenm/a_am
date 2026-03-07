@@ -37,6 +37,54 @@ async function includePartials() {
   }));
 }
 
+function normalizePath(path) {
+  const clean = path.replace(/\/index\.html$/, '/').replace(/\.html$/, '');
+  return clean.endsWith('/') ? clean : `${clean}`;
+}
+
+function initNavigationExperience() {
+  const siteHeader = document.querySelector('[data-site-header]');
+  const menuToggle = document.querySelector('[data-menu-toggle]');
+  const primaryNav = document.querySelector('[data-primary-nav]');
+
+  if (primaryNav) {
+    const currentPath = normalizePath(window.location.pathname);
+    primaryNav.querySelectorAll('a').forEach((link) => {
+      const linkPath = normalizePath(new URL(link.href, window.location.origin).pathname);
+      const isCurrent = currentPath === linkPath;
+      if (isCurrent) {
+        link.setAttribute('aria-current', 'page');
+      }
+    });
+  }
+
+  if (!siteHeader || !menuToggle || !primaryNav) return;
+
+  function closeMenu() {
+    siteHeader.classList.remove('menu-open');
+    menuToggle.setAttribute('aria-expanded', 'false');
+  }
+
+  menuToggle.addEventListener('click', () => {
+    const open = siteHeader.classList.toggle('menu-open');
+    menuToggle.setAttribute('aria-expanded', String(open));
+  });
+
+  document.addEventListener('click', (event) => {
+    if (!siteHeader.classList.contains('menu-open')) return;
+    if (siteHeader.contains(event.target)) return;
+    closeMenu();
+  });
+
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape') closeMenu();
+  });
+
+  primaryNav.querySelectorAll('a').forEach((link) => {
+    link.addEventListener('click', closeMenu);
+  });
+}
+
 function supportsIntersectionObserver() {
   return 'IntersectionObserver' in window && 'IntersectionObserverEntry' in window;
 }
@@ -238,6 +286,7 @@ function injectSeoSchema() {
 
 document.addEventListener('DOMContentLoaded', async () => {
   await includePartials();
+  initNavigationExperience();
   initRevealAnimations();
   initLazyMedia();
   initGeoFields();

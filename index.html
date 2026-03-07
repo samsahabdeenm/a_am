@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Puravigal | Scalable SaaS ecosystem for modern businesses</title>
   <meta name="description" content="Puravigal builds modular SaaS products with a scalable architecture. Explore products, company information, and enterprise contact options.">
+  <meta name="keywords" content="Puravigal, SaaS company, cloud software, product architecture, POS software">
   <link rel="canonical" href="https://puravigal.com/">
   <meta property="og:title" content="Puravigal SaaS Ecosystem">
   <meta property="og:description" content="Company platform and modular product architecture for scalable growth.">
@@ -17,32 +18,50 @@
 <body>
   <a class="skip-link" href="#main">Skip to content</a>
   <div data-include="/partials/global-header.html"></div>
+
   <main id="main">
     <section class="hero container reveal">
       <h1>Puravigal builds a unified SaaS ecosystem for growing businesses</h1>
-      <p>The root platform operates like a central brand experience while each product runs with its own product identity and dedicated pages, enabling scale like Zoho-style architecture.</p>
-      <a class="btn" href="/products.html">Explore Products</a>
+      <p>The root platform acts as the brand control center. Each product runs independently with product-specific UI, while sharing a robust common foundation for speed, consistency, and scale.</p>
+      <div class="nav" style="margin-top:18px">
+        <a class="btn" href="/products.html">Explore Products</a>
+        <a class="btn secondary" href="/contact-us.html">Book a Demo</a>
+      </div>
     </section>
 
     <section class="section container">
-      <h2>Scalable by design</h2>
-      <p class="lead">Global design tokens, shared components, and product-level extensions ensure fast launch cycles for every upcoming Puravigal product.</p>
+      <h2>Why this structure works</h2>
+      <p class="lead">We follow a layered architecture: global common assets, product-level common assets, and page-specific extensions.</p>
       <div class="grid grid-3">
-        <article class="card reveal"><h3>Brand-first root site</h3><p class="small">Home, About, Contact, Privacy, Terms and future corporate pages live under a unified main domain.</p></article>
-        <article class="card reveal"><h3>Product-ready architecture</h3><p class="small">Products are nested as independent sections like <code>/pos</code>, each with dedicated UI and journeys.</p></article>
-        <article class="card reveal"><h3>Reusable components</h3><p class="small">Forms, cards, CTA blocks, and utility classes can be dropped into any page consistently.</p></article>
+        <article class="card reveal"><h3>Global common</h3><p class="small">Tokens, utilities, header/footer injection, accessibility and SEO helpers are centralized.</p></article>
+        <article class="card reveal"><h3>Product common</h3><p class="small">Each product gets its own header/footer and style behavior without duplicating global code.</p></article>
+        <article class="card reveal"><h3>Page node</h3><p class="small">Page-specific scripts/styles stay isolated, so maintenance and rollout remain predictable.</p></article>
       </div>
     </section>
 
     <section class="section container reveal">
-      <h2>Featured product</h2>
-      <div class="card">
-        <h3>Puravigal POS</h3>
-        <p class="small">Cloud-native point of sale solution for multi-branch businesses with integrated inventory and analytics.</p>
-        <a class="btn" href="/pos/index.html">Visit POS</a>
+      <h2>Featured product: Puravigal POS</h2>
+      <div class="grid grid-2">
+        <article class="card">
+          <h3>Billing + inventory + analytics</h3>
+          <p class="small">Puravigal POS helps retail and restaurant teams automate billing, monitor stock, and track performance in real time.</p>
+          <a class="btn" href="/pos/index.html">Visit POS</a>
+        </article>
+        <article class="card">
+          <img data-src="/images/puravigal-bg.png" alt="Puravigal product illustration" loading="lazy" decoding="async" width="640" height="360">
+        </article>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="grid grid-3">
+        <article class="card reveal"><h3>99.9% reliability focus</h3><p class="small">Architecture designed for resilient product operations and predictable delivery.</p></article>
+        <article class="card reveal"><h3>SEO & schema by default</h3><p class="small">Canonical, metadata and JSON-LD schema are integrated into common runtime.</p></article>
+        <article class="card reveal"><h3>Accessibility-first</h3><p class="small">Keyboard focus states, reduced-motion support and semantic landmarks included.</p></article>
       </div>
     </section>
   </main>
+
   <div data-include="/partials/global-footer.html"></div>
 </body>
 </html>
