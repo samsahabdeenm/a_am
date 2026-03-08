@@ -277,6 +277,20 @@ source[data-srcset] {
 .legal-list li + li {
   margin-top: 8px;
 }
+
+.not-found-shell {
+  min-height: calc(100vh - 80px);
+  display: grid;
+  place-content: center;
+  justify-items: center;
+  text-align: center;
+  gap: 12px;
+}
+
+.not-found-shell .lead {
+  max-width: 620px;
+}
+
 @media (max-width: 1280px) {
   :root { --container: min(1080px, 94vw); }
 }
