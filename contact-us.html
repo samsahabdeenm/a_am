@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Contact Us | Puravigal</title>
+  <meta name="description" content="Contact Puravigal sales and support teams for demos, integrations, and partnerships.">
+  <link rel="canonical" href="https://puravigal.com/contact-us">
+  <link rel="icon" href="/images/fav/favicon.ico" type="image/x-icon">
+  <link rel="stylesheet" href="/css/common.css">
+  <script defer src="/js/common.js"></script>
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+  <div data-include="/partials/global-header.html"></div>
+  <main id="main" class="container section">
+    <h1>Contact Us</h1>
+    <p class="lead">Need a demo or partnership call? Fill in this reusable contact form component.</p>
+    <div class="card">
+      <form class="form-stack js-reusable-form" aria-label="Contact form">
+        <label>Name <input class="input" type="text" name="name" required></label>
+        <label>Email <input class="input" type="email" name="email" required></label>
+        <label>Country
+          <select class="input" name="country" data-geo="country" required></select>
+        </label>
+        <label>State
+          <select class="input" name="state" data-geo="state" required></select>
+        </label>
+        <label>Country code <input class="input" type="text" name="dial_code" data-geo="dial-code" readonly></label>
+        <label>Phone number <input class="input" type="tel" name="phone" inputmode="tel" required></label>
+        <label>Message <textarea name="message" required></textarea></label>
+        <button class="btn" type="submit">Submit</button>
+        <p class="small js-form-message" role="status" aria-live="polite"></p>
+      </form>
+    </div>
+  </main>
+  <div data-include="/partials/global-footer.html"></div>
+</body>
+</html>
