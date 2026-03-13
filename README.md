@@ -20,3 +20,27 @@ python3 scripts/generate_sitemap.py
 ```
 
 This scans site HTML pages and rebuilds `sitemap.xml`.
+
+
+## Conflict-safe one-click push
+
+Use this once per machine to reduce repeated conflict prompts:
+
+```bash
+git config pull.rebase true
+git config rebase.autoStash true
+git config rerere.enabled true
+```
+
+Then use a single command for daily sync + push to `main`:
+
+```bash
+./scripts/sync_push.sh origin main
+```
+
+What it does:
+1. fetches latest remote changes,
+2. rebases your current branch on remote `main`,
+3. pushes your current branch to remote `main`.
+
+> Note: if both sides changed the exact same lines, Git can still require a one-time manual resolution.
