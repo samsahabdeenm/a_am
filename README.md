@@ -22,6 +22,32 @@ python3 scripts/generate_sitemap.py
 This scans site HTML pages and rebuilds `sitemap.xml`.
 
 
+
+## One-command PR create + merge
+
+If you want to avoid clicking **Create PR -> Merge PR -> Confirm**, use this script:
+
+```bash
+./scripts/pr_merge_oneclick.sh main squash
+```
+
+What it does:
+1. pushes your current feature branch,
+2. creates a PR to `main`,
+3. enables auto-merge (`squash` by default),
+4. deletes the feature branch after merge.
+
+Prerequisites:
+- GitHub CLI installed (`gh`)
+- Logged in once with `gh auth login`
+
+You can change merge method:
+
+```bash
+./scripts/pr_merge_oneclick.sh main rebase
+./scripts/pr_merge_oneclick.sh main merge
+```
+
 ## Conflict-safe one-click push
 
 Use this once per machine to reduce repeated conflict prompts:
